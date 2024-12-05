@@ -1,0 +1,29 @@
+[package]
+name = "game"
+version = "0.1.0"
+authors = ["LLLL Colonq <llll@colonq.computer>"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+opt-level = 2
+codegen-units = 1
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[dependencies]
+bitflags = "*" # C-style bitwise flags
+rand = "*" # rng
+getrandom = {version = "*", features = ["js"]} # rng in the browser
+log = "*" # logging
+lazy_static = "*" # global constants
+console_log = "*" # log to browser console
+console_error_panic_hook = "*" # log to browser console on panic
+tracing-wasm = "*" # trace performance in browser
+wasm-bindgen = "*" # wasm bindings
+wasm-bindgen-futures = "*" # interface with async javascript
+strum = {version = "*", features = ["derive"]} # utility macros for enums
+winnow = "*" # parser combinators
