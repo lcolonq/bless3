@@ -1,0 +1,11 @@
+* Grabbar
+#+begin_quote
+<expr> ::= <atom> | <apply> | <compose> | <abstract-compose>
+<expr-list> ::= "" | <expr> <expr-list>
+<var> ::= <any character other than "(){}[]">
+<var-list> ::= <var> | <var> <var-list>
+<atom> ::= <var> | <integer-literal> | <float-literal> | <string-literal> | <character-literal>
+<apply> ::= "(" <expr> <expr-list> ")"
+<compose> ::= "[" <expr-list> "]"
+<abstract-compose> ::= "[{" <var-list> "}" <expr-list> "}"
+#+end_quote
